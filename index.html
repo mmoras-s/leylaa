@@ -422,6 +422,232 @@
                 padding: 1.5rem;
             }
         }
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            overflow-x: hidden;
+        }
+
+        .fade-up {
+            opacity: 0;
+            transform: translate3d(0, 28px, 0);
+            transition:
+                opacity .75s cubic-bezier(.22, 1, .36, 1),
+                transform .75s cubic-bezier(.22, 1, .36, 1);
+            will-change: opacity, transform;
+        }
+
+        .fade-up.appear {
+            opacity: 1;
+            transform: translate3d(0, 0, 0);
+        }
+        .procedure-card.fade-up {
+            transition-delay: var(--delay, 0ms);
+        }
+        .procedure-card,
+        .training-card,
+        .contact-item,
+        .services-grid {
+            position: relative;
+        }
+
+        .procedure-card,
+        .training-card {
+            overflow: hidden;
+        }
+
+        .procedure-card::after,
+        .training-card::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -130%;
+            width: 55%;
+            height: 100%;
+            pointer-events: none;
+            background: linear-gradient(
+                105deg,
+                transparent 0%,
+                rgba(255,255,255,.035) 45%,
+                rgba(255,255,255,.08) 50%,
+                rgba(255,255,255,.035) 55%,
+                transparent 100%
+            );
+            transform: skewX(-18deg);
+            transition: left .7s ease;
+        }
+
+        .procedure-card:hover::after,
+        .training-card:hover::after {
+            left: 150%;
+        }
+
+        .procedure-card:hover,
+        .training-card:hover {
+            transition:
+                transform .35s cubic-bezier(.22, 1, .36, 1),
+                border-color .35s ease,
+                box-shadow .35s ease;
+            box-shadow: 0 14px 30px rgba(0,0,0,.48);
+        }
+
+        .procedure-img img {
+            transition: transform .65s cubic-bezier(.22, 1, .36, 1);
+            will-change: transform;
+        }
+
+        .procedure-card:hover .procedure-img img {
+            transform: scale(1.035);
+        }
+        .btn-outline-beige,
+        .btn-toggle-procedures,
+        .btn-training-wa,
+        #goTopBtn {
+            transition:
+                transform .25s cubic-bezier(.22, 1, .36, 1),
+                background-color .25s ease,
+                color .25s ease,
+                box-shadow .25s ease;
+        }
+
+        .btn-outline-beige:hover,
+        .btn-training-wa:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 7px 18px rgba(0,0,0,.28);
+        }
+
+        .btn-outline-beige:active,
+        .btn-training-wa:active,
+        .btn-toggle-procedures:active {
+            transform: translateY(0) scale(.98);
+        }
+
+        .btn-toggle-procedures:hover {
+            box-shadow: 0 8px 22px rgba(0,0,0,.32);
+        }
+        .modal.fade .modal-dialog {
+            transform: translate3d(0, 22px, 0) scale(.985);
+            opacity: 0;
+            transition:
+                transform .38s cubic-bezier(.22, 1, .36, 1),
+                opacity .28s ease;
+        }
+
+        .modal.show .modal-dialog {
+            transform: translate3d(0, 0, 0) scale(1);
+            opacity: 1;
+        }
+
+        .modal-backdrop.show {
+            opacity: .72;
+            transition: opacity .3s ease;
+        }
+
+        .modal-content {
+            box-shadow: 0 20px 60px rgba(0,0,0,.6);
+        }
+        .modal.show .modal-header,
+        .modal.show .modal-body,
+        .modal.show .modal-footer {
+            animation: modalContentIn .45s ease both;
+        }
+
+        .modal.show .modal-body {
+            animation-delay: .04s;
+        }
+
+        .modal.show .modal-footer {
+            animation-delay: .08s;
+        }
+
+        @keyframes modalContentIn {
+            from {
+                opacity: 0;
+                transform: translateY(8px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .price-table.has-volumes {
+            table-layout: fixed;
+        }
+
+        .price-table.has-volumes th {
+            padding: .35rem .5rem .65rem;
+            border-bottom: 1px solid rgba(192,192,192,.35);
+            color: var(--accent-beige);
+            font-size: .88rem;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        .price-table.has-volumes th:first-child {
+            width: 56%;
+            text-align: left;
+        }
+
+        .price-table.has-volumes th:not(:first-child) {
+            width: 22%;
+            text-align: right;
+        }
+
+        .price-table.has-volumes td {
+            padding: .65rem .5rem;
+            vertical-align: middle;
+        }
+
+        .price-table.has-volumes td:not(:first-child) {
+            text-align: right;
+            color: var(--accent-beige);
+            white-space: nowrap;
+        }
+
+        .price-table.has-volumes td:first-child {
+            color: #e0e0e0;
+        }
+
+        .price-table .price-empty {
+            color: #666 !important;
+        }
+
+        @media (max-width: 768px) {
+            .price-table.has-volumes {
+                font-size: .88rem;
+            }
+
+            .price-table.has-volumes th:first-child {
+                width: 48%;
+            }
+
+            .price-table.has-volumes th:not(:first-child) {
+                width: 26%;
+            }
+
+            .price-table.has-volumes td,
+            .price-table.has-volumes th {
+                padding-left: .3rem;
+                padding-right: .3rem;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+
+            *,
+            *::before,
+            *::after {
+                animation-duration: .01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: .01ms !important;
+            }
+        }
+
     </style>
 </head>
 <body>
@@ -657,6 +883,7 @@
     categories.forEach((cat, idx) => {
         const col = document.createElement('div');
         col.className = 'col-md-4 col-sm-6 col-12 mb-4';
+        col.style.setProperty('--delay', `${Math.min(idx, 5) * 70}ms`);
         col.innerHTML = `
             <div class="procedure-card fade-up">
                 <div class="procedure-img">
@@ -670,12 +897,58 @@
         `;
         if (idx < 3) staticRow.appendChild(col);
         else collapseRow.appendChild(col);
+        const hasVolumePrices = cat.priceTable.some(row => String(row[1]).includes('/'));
 
-        let tableHtml = `<table class="price-table">`;
-        cat.priceTable.forEach(row => {
-            tableHtml += `<tr><td>${row[0]}</td><td>${row[1]}</td></tr>`;
-        });
-        tableHtml += `</table>`;
+        let tableHtml = '';
+
+        if (hasVolumePrices) {
+            tableHtml = `
+                <table class="price-table has-volumes">
+                    <thead>
+                        <tr>
+                            <th>Препарат / услуга</th>
+                            <th>0,5 мл</th>
+                            <th>1 мл</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+            `;
+
+            cat.priceTable.forEach(row => {
+                const rawPrice = String(row[1]).replace(/\s*₽/g, '').trim();
+                const parts = rawPrice.split('/').map(part => part.trim());
+
+                let halfMl = '—';
+                let oneMl = '—';
+
+                if (parts.length >= 2) {
+                    halfMl = `${parts[0]} ₽`;
+                    oneMl = `${parts[1]} ₽`;
+                } else {
+                    // Для услуги с одной ценой сохраняем её справа.
+                    oneMl = `${parts[0]} ₽`;
+                }
+
+                tableHtml += `
+                    <tr>
+                        <td>${row[0]}</td>
+                        <td class="${halfMl === '—' ? 'price-empty' : ''}">${halfMl}</td>
+                        <td>${oneMl}</td>
+                    </tr>
+                `;
+            });
+
+            tableHtml += `
+                    </tbody>
+                </table>
+            `;
+        } else {
+            tableHtml = `<table class="price-table"><tbody>`;
+            cat.priceTable.forEach(row => {
+                tableHtml += `<tr><td>${row[0]}</td><td>${row[1]}</td></tr>`;
+            });
+            tableHtml += `</tbody></table>`;
+        }
 
         const modalDiv = document.createElement('div');
         modalDiv.className = 'modal fade';
@@ -716,15 +989,25 @@
     collapseElem.addEventListener('hide.bs.collapse', () => { toggleBtn.textContent = 'Показать все процедуры'; });
 
     const fadeElements = document.querySelectorAll('.fade-up');
+
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('appear');
-                observer.unobserve(entry.target);
-            }
+            if (!entry.isIntersecting) return;
+
+            entry.target.classList.add('appear');
+            observer.unobserve(entry.target);
         });
-    }, { threshold: 0.1 });
-    fadeElements.forEach(el => observer.observe(el));
+    }, {
+        threshold: 0.12,
+        rootMargin: '0px 0px -35px 0px'
+    });
+
+    fadeElements.forEach((el, index) => {
+        if (!el.style.getPropertyValue('--delay')) {
+            el.style.setProperty('--delay', `${Math.min(index % 4, 3) * 65}ms`);
+        }
+        observer.observe(el);
+    });
 
     document.querySelectorAll('.nav-link').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
@@ -763,6 +1046,18 @@
     }
     window.addEventListener('scroll', setActiveLink);
     setActiveLink();
+
+    // Небольшая защита от "скачка" страницы при открытии модалки
+    document.querySelectorAll('.modal').forEach(modal => {
+        modal.addEventListener('show.bs.modal', () => {
+            document.body.classList.add('modal-opening');
+        });
+
+        modal.addEventListener('hidden.bs.modal', () => {
+            document.body.classList.remove('modal-opening');
+        });
+    });
+
 </script>
 
 <div class="modal fade modal-training" id="trainingModal1" tabindex="-1" aria-hidden="true">
