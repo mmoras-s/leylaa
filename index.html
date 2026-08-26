@@ -527,6 +527,7 @@
         .btn-toggle-procedures:hover {
             box-shadow: 0 8px 22px rgba(0,0,0,.32);
         }
+
         .modal.fade .modal-dialog {
             transform: translate3d(0, 22px, 0) scale(.985);
             opacity: 0;
@@ -548,6 +549,7 @@
         .modal-content {
             box-shadow: 0 20px 60px rgba(0,0,0,.6);
         }
+
         .modal.show .modal-header,
         .modal.show .modal-body,
         .modal.show .modal-footer {
@@ -572,6 +574,7 @@
                 transform: translateY(0);
             }
         }
+
         .price-table.has-volumes {
             table-layout: fixed;
         }
@@ -742,28 +745,28 @@
                 <div class="training-card" data-bs-toggle="modal" data-bs-target="#trainingModal1">
                     <div class="training-title">Ботулинотерапия</div>
                     <div class="training-hint">Нажмите, чтобы посмотреть программу</div>
-                    <div class="training-price">30 000 ₽</div>
+                    <div class="training-price">40 000 ₽</div>
                 </div>
             </div>
             <div class="col-md-3 col-sm-6">
                 <div class="training-card" data-bs-toggle="modal" data-bs-target="#trainingModal2">
                     <div class="training-title">Контурная пластика</div>
                     <div class="training-hint">Нажмите, чтобы посмотреть программу</div>
-                    <div class="training-price">70 000 ₽</div>
+                    <div class="training-price">75 000 ₽</div>
                 </div>
             </div>
             <div class="col-md-3 col-sm-6">
                 <div class="training-card" data-bs-toggle="modal" data-bs-target="#trainingModal3">
-                    <div class="training-title">Косметолог ‑ инъекционист</div>
+                    <div class="training-title">Инъекционная косметология</div>
                     <div class="training-hint">Нажмите, чтобы посмотреть программу</div>
                     <div class="training-price">50 000 ₽</div>
                 </div>
             </div>
             <div class="col-md-3 col-sm-6">
                 <div class="training-card" data-bs-toggle="modal" data-bs-target="#trainingModal4">
-                    <div class="training-title">Пилинги и чистки лица</div>
+                    <div class="training-title">Чистка лица</div>
                     <div class="training-hint">Нажмите, чтобы посмотреть программу</div>
-                    <div class="training-price">20 000 ₽</div>
+                    <div class="training-price">25 000 ₽</div>
                 </div>
             </div>
         </div>
@@ -834,16 +837,16 @@
     const categories = [
         { name: "Увеличение губ", img: "images/губы.jpeg", shortPrice: "от 4 000 ₽", duration: "30–40 мин", desc: "Контурная пластика губ с использованием филлеров. Природный объём, форма по вашему желанию.", priceTable: [
             ["Elasty D", "4 000 / 6 000 ₽"], ["Vermillion", "4 000 / 6 000 ₽"], 
-            ["Revolax", "5 000 / 7 000 ₽"], ["Dermalax", "5 000 / 7 000 ₽"], ["Reluma", "6 000 / 9 000 ₽"], ["Stylage M", "7 000 / 12 000 ₽"]
+            ["Revolax", "5 000 / 7 000 ₽"], ["Dermalax", "5 000 / 7 000 ₽"], ["Reluma", "6 000 / 9 000 ₽"], ["Stylage M", "7 000 / 13 000 ₽"]
         ] },
         { name: "Безоперационная ринопластика", img: "images/нос.jpeg", shortPrice: "от 4 000 ₽", duration: "30–40 мин", desc: "Коррекция формы носа филлерами. Убирает горбинку, приподнимает кончик, выравнивает спинку.", priceTable: [
-            ["Elasty", "4 000 / 6 000 ₽"], ["Revolax Sub Q", "5 000 / 7 000 ₽"], ["Dermalax Implant", "5 000 / 7 000 ₽"], ["Reluma", "6 000 / 9 000 ₽"], ["Stylage XL", "8 000 / 12 000 ₽"]
+            ["Elasty", "4 000 / 6 000 ₽"], ["Revolax Sub Q", "5 000 / 7 000 ₽"], ["Dermalax Implant", "5 000 / 7 000 ₽"], ["Reluma", "6 000 / 9 000 ₽"], ["Stylage XL", "8 000 / 13 000 ₽"]
         ] },
         { name: "Скулы / подбородок / углы Джоли / яблочки", img: "images/скулы.jpeg", shortPrice: "от 6 000 ₽", duration: "30–45 мин", desc: "Моделирование овала лица, коррекция возрастных изменений, объём в нужных зонах.", priceTable: [
-            ["Elasty (1 ml)", "6 000 ₽"], ["Revolax (1 ml)", "7 000 ₽"], ["Dermalax (1 ml)", "7 000 ₽"], ["Reluma (1 ml)", "9 000 ₽"], ["Stylage (1 ml)", "12 000 ₽"]
+            ["Elasty (1 ml)", "6 000 ₽"], ["Revolax (1 ml)", "7 000 ₽"], ["Dermalax (1 ml)", "7 000 ₽"], ["Reluma (1 ml)", "9 000 ₽"], ["Stylage (1 ml)", "13 000 ₽"]
         ] },
         { name: "Носогубная складка", img: "images/носогубка.jpeg", shortPrice: "от 6 000 ₽", duration: "20–30 мин", desc: "Коррекция заломов в зонах носогубных складок, омоложение.", priceTable: [
-            ["Elasty D (1 ml)", "6 000 ₽"], ["Dermalax (1 ml)", "7 000 ₽"], ["Reluma (1 ml)", "9 000 ₽"], ["Neotiva (1 ml)", "10 000 ₽"], ["Stylage (1 ml)", "12 000 ₽"]
+            ["Elasty D (1 ml)", "6 000 ₽"], ["Dermalax (1 ml)", "7 000 ₽"], ["Reluma (1 ml)", "9 000 ₽"], ["Neotiva (1 ml)", "10 000 ₽"], ["Stylage (1 ml)", "13 000 ₽"]
         ] },
         { name: "Выведение филлера", img: "images/выведение.jpeg", shortPrice: "от 3 000 ₽", duration: "20–30 мин", desc: "Полное удаление филлера при помощи препарата.", priceTable: [
             ["Локальное выведение", "3 000 ₽"], ["Полное выведение", "4 000 ₽"]
@@ -863,7 +866,7 @@
             ["Aurora Lipo (2 ml)", "4 000 ₽"], ["Dr.lipo (2 ml)", "4 000 ₽"], ["Lipo lab (2 ml)", "3 000 ₽"]
         ] },
         { name: "Мезотерапия", img: "images/мезо.jpeg", shortPrice: "от 3 000 ₽", duration: "20–30 мин", desc: "Осветление кожи, устранение пигментации, акне, постакне.", priceTable: [
-            ["Осветление кругов под глазами", "3 000 ₽"], ["Устранение пигментации", "4 000 ₽"], ["Анти-акне", "4 000 ₽ / 6 000 ₽"], ["Рост волос / против выпадения", "3 500 ₽"], ["Сужение пор / постакне", "3 500 ₽"]
+            ["Осветление кругов под глазами", "3 000 ₽"], ["Устранение пигментации", "4 000 ₽"], ["Анти-акне", "4 000 ₽ – 6 000 ₽"], ["Рост волос / против выпадения", "3 500 ₽"], ["Сужение пор / постакне", "3 500 ₽"]
         ] },
         { name: "Чистка лица", img: "images/чистка.jpeg", shortPrice: "от 3 000 ₽", duration: "1 - 1,5 часа", desc: "Очищение, подбор ухода по типу кожи.", priceTable: [
             ["Комбинированная чистка", "2 500 ₽"], ["Механическая чистка", "2 000 ₽"], ["Комбинированная чистка + пилинг", "3 500 ₽"], 
@@ -897,6 +900,7 @@
         `;
         if (idx < 3) staticRow.appendChild(col);
         else collapseRow.appendChild(col);
+
         const hasVolumePrices = cat.priceTable.some(row => String(row[1]).includes('/'));
 
         let tableHtml = '';
@@ -925,7 +929,6 @@
                     halfMl = `${parts[0]} ₽`;
                     oneMl = `${parts[1]} ₽`;
                 } else {
-                    // Для услуги с одной ценой сохраняем её справа.
                     oneMl = `${parts[0]} ₽`;
                 }
 
@@ -1047,7 +1050,6 @@
     window.addEventListener('scroll', setActiveLink);
     setActiveLink();
 
-    // Небольшая защита от "скачка" страницы при открытии модалки
     document.querySelectorAll('.modal').forEach(modal => {
         modal.addEventListener('show.bs.modal', () => {
             document.body.classList.add('modal-opening');
@@ -1070,8 +1072,8 @@
             <div class="modal-body">
                 <div class="modal-details">
                     <h3>Ботулинотерапия</h3>
-                    <p><strong>Стоимость:</strong> 30 000 ₽</p>
-                    <p><strong>Формат:</strong> 1 день теория, 2 дня практика. Отработка знаний на моделях.</p>
+                    <p><strong>Стоимость:</strong> 40 000 ₽</p>
+                    <p><strong>Формат:</strong> 2 дня теория, 3 дня практика.</p>
                     <p><strong>Программа:</strong></p>
                     <ul>
                         <li>Показания/противопоказания</li>
@@ -1099,8 +1101,8 @@
             <div class="modal-body">
                 <div class="modal-details">
                     <h3>Контурная пластика</h3>
-                    <p><strong>Стоимость:</strong> 70 000 ₽</p>
-                    <p><strong>Формат:</strong> 1 день теория, 4 дня практика. Отработка на моделях.</p>
+                    <p><strong>Стоимость:</strong> 75 000 ₽</p>
+                    <p><strong>Формат:</strong> 7 дней обучения: 2 дня теория, 5 дней практика.</p>
                     <p><strong>Программа:</strong></p>
                     <ul>
                         <li>Разбор филлеров, постановка руки</li>
@@ -1125,14 +1127,14 @@
     <div class="modal-dialog modal-dialog-centered modal-lg">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title text-white">Косметолог‑инъекционист</h5>
+                <h5 class="modal-title text-white">Инъекционная косметология</h5>
                 <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
             </div>
             <div class="modal-body">
                 <div class="modal-details">
-                    <h3>Косметолог‑инъекционист</h3>
+                    <h3>Инъекционная косметология</h3>
                     <p><strong>Стоимость:</strong> 50 000 ₽</p>
-                    <p><strong>Формат:</strong> 1 день теория, 3 дня практика. Весь спектр инъекционной косметологии</p>
+                    <p><strong>Формат:</strong> 2 дня теория, 3 дня практика.</p>
                     <p><strong>Программа:</strong></p>
                     <ul>
                         <li>Показания/противопоказания</li>
@@ -1155,14 +1157,14 @@
     <div class="modal-dialog modal-dialog-centered modal-lg">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title text-white">Пилинги и чистки лица</h5>
+                <h5 class="modal-title text-white">Чистка лица</h5>
                 <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
             </div>
             <div class="modal-body">
                 <div class="modal-details">
                     <h3>Чистка лица</h3>
-                    <p><strong>Стоимость:</strong> 20 000 ₽</p>
-                    <p><strong>Формат:</strong> 1 день теория, 1 день практика. Отработка на моделях</p>
+                    <p><strong>Стоимость:</strong> 25 000 ₽</p>
+                    <p><strong>Формат:</strong> 1 день теория, 1 день практика.</p>
                     <p><strong>Программа:</strong></p>
                     <ul>
                         <li>Разбор типов кожи</li>
